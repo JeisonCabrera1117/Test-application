@@ -17,6 +17,10 @@ es:
       back: Atrás
       preference: Preferencias
   preference:
+    notification:
+      succes_destroy: La preferencia se eliminó con éxito
+      error_destroy: Ocurrió un error al intentar eliminar la preferencia
+      success: La preferencia fue creada exitosamente
     title: Ver preferencias
     create: Crear preferencia
     index:

@@ -17,6 +17,10 @@ en:
       back: Back
       preference: Preferences
   preference:
+    notification:
+      succes_destroy: The preference was successfully removed
+      error_destroy: An error occurred while trying to remove the preferencec
+      success: The preference was created successfully
     title: View preferences
     create: Create preference
     index:
@@ -33,6 +37,10 @@ en:
       save: Save
       back: Back
   survey_question:
+    notification:
+      succes_destroy: The survey question was successfully removed
+      error_destroy: An error occurred while trying to remove the survey question
+      success: The survey question was created successfully
     index:
       new: new survey question
       index: Index

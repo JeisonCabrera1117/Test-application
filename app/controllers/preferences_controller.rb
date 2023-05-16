@@ -13,6 +13,7 @@ class PreferencesController < ApplicationController
     @preference = Preference.new(preference_params)
     @preference.save
     if @preference.errors.empty?
+      flash[:success] = t("preference.notification.success")
       redirect_to preferences_path
     else
       render_form layout: false
@@ -32,7 +33,11 @@ class PreferencesController < ApplicationController
   end
 
   def destroy
-    @preference.destroy
+    if @preference.destroy
+      flash[:success] = t("preference.notification.succes_destroy")
+    else
+      flash[:error] = t("preference.notification.error_destroy")
+    end 
     redirect_to preferences_path
   end
 

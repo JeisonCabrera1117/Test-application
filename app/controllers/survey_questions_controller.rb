@@ -14,6 +14,7 @@ class SurveyQuestionsController < ApplicationController
   def create
     @survey_question = SurveyQuestion.new(params_survey_questions)
     if @survey_question.save
+      flash[:success] = t("survey_question.notification.success")
       redirect_to survey_questions_path
     else
       render_form status: :bad_request
@@ -21,8 +22,11 @@ class SurveyQuestionsController < ApplicationController
   end
 
   def destroy
-    @survey_question.destroy
-
+    if @survey_question.destroy
+      flash[:success] = t("survey_question.notification.succes_destroy")
+    else
+      flash[:error] = t("survey_question.notification.error_destroy")
+    end  
     redirect_to survey_questions_path
   end
 
