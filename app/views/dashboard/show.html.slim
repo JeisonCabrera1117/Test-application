@@ -1,0 +1,21 @@
+.navbar.navbar-expand-lg.navbar-light.bg-secondary
+  .navbar-brand = 'Micolet'
+  .collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item
+        = link_to t("root.user"), new_user_path, class: "nav-link"
+      li.nav-item
+        = link_to t("root.preferences"), preferences_path, class: "nav-link"
+      li.nav-item
+        = link_to t("root.survey_quesions"), survey_questions_path, class: "nav-link"
+
+.card-body
+  .mt-5.mb-5
+    h1.text-center.text-info.display-4
+      = t("root.title")
+    h1.text-center.display-4
+      = image_tag("micolet.png", class: "img-thumbnail", width: "320", height: "320")
+    p.h4.text-center
+      = t("root.choose")
+
+  

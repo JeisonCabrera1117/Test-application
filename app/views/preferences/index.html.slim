@@ -1,0 +1,13 @@
+.navbar.navbar-expand-lg.navbar-light.bg-secondary
+  ul.navbar-nav
+      li.nav-item
+        = link_to t("navbar.index"), root_path, class: 'nav-link'
+  .navbar-brand = t("preference.title")
+
+.card-body
+  - if @preferences.present?
+    = render 'table'
+  - else
+    = render "shared/empty_records"
+
+  = link_to t("preference.index.new"), new_preference_path, class: "btn btn-info" 

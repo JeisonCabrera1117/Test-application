@@ -1,0 +1,55 @@
+es:
+  navbar:
+      index: ⇠ Inicio |
+      return: ⇠ Devolver
+  root:
+    preferences: Ver preferencias
+    survey_quesions: Ver preguntas de encuesta
+    user: Nuevo usuario
+    title: Micolet coding challenge
+    choose: ⇧ Elija una opción de las que aparecen en el navbar  ⇧
+  user:
+    title: Ver usuario
+    form:
+      email: email
+      name: Nombre
+      save: Guardar
+      back: Atrás
+      preference: Preferencias
+  preference:
+    title: Ver preferencias
+    create: Crear preferencia
+    index:
+      new: Nueva preferencia
+      index: Inicio
+    table:
+      number: Número
+      description: Descripción
+      edit: Editar
+      delete: Eliminar
+    form:
+      title: Preferencia
+      description: Descripción de referencia
+      save: Guardar
+      back: Atrás
+  survey_question:
+    index:
+      new: Nueva pregunta de encuesta
+      index: Inicio
+    form:
+      title: Crear pregunta de encuesta
+      subtitle: Pregunta de encuesta
+      question: Pregunta
+      save: Guardar
+      back: Atrás
+  validates:
+    user:
+      email_present: email debe estar presente
+      email_use: el email ya está en uso, intente con otro
+      email_not_valid: el email no es valido, por favor intente con otro
+  survey:
+    survey_answer: Pregunta
+    write_answer: escriba la respuesta
+    finish: Finalizar
+    next: Siguiente
+    back: Atrás

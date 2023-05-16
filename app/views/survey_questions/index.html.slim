@@ -1,0 +1,13 @@
+.navbar.navbar-expand-lg.navbar-light.bg-secondary
+  ul.navbar-nav
+      li.nav-item
+        = link_to t("navbar.index"), root_path, class: 'nav-link'
+  .navbar-brand = 'View survey questions'
+
+.card-body
+  - if @survey_questions.present?
+    = render 'table'
+  - else
+    = render "shared/empty_records"
+  = link_to t("survey_question.index.new"), new_survey_question_path, class: "btn btn-info"
+ 

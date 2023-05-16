@@ -1,0 +1,10 @@
+.input-group.mb-3 data-controller="link-to-add"
+  = f.hidden_field :preference_id, id: nil
+  / = f.collection_check_boxes :preference_ids, Preference.all, :id, :description, class: 'custom-select'
+
+  = f.collection_check_boxes :preference_ids, Preference.all, :id, :description, class: 'custom-select' do |b|
+    .custom-control.custom-checkbox.custom-control-inline
+      = b.check_box + b.label 
+
+  / = f.select :preference_id, Preference.all.map { |r| [r.description, r.id] }, {}, class: 'custom-select',
+  /   id: nil

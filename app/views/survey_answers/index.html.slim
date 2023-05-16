@@ -1,0 +1,26 @@
+.d-flex.justify-content-center.mt-1
+      = image_tag("micolet_two.png", class: "img-thumbnail", width: "200", height: "150")
+= form_for @survey_answer,
+  html: { id: 'surveyanswerForm' } do |f|
+  .col-md-12.mx-auto.text-center
+    = f.hidden_field :survey_question_id, value: @survey_question_id
+    = f.hidden_field :position, value: @position
+    = f.hidden_field :survey_id, value: @survey_id
+    h2 = @position
+    h2 = @survey_question
+
+    h5 = t("survey.survey_answer")
+    = f.text_field :answer, class: 'form-control', placeholder: t("survey.write_answer")
+    .d-flex.justify-content-center.mt-4
+      - if @maximum == @position
+        button.btn.btn-info.mx-1 type='submit' name='commit' value='back' form='surveyanswerForm'
+          = t("survey.back")
+        button.btn.btn-info.mx-1 type='submit' name='commit' value='finish' form='surveyanswerForm'
+          = t("survey.finish")
+      - else
+        - if @position.to_i > 1
+          button.btn.btn-info.mx-1 type='submit' name='commit' value='back' form='surveyanswerForm'
+            = t("survey.back")
+        - if @position.to_i >= 1
+          button.btn.btn-info.mx-1 type='submit' name='commit' value='next' form='surveyanswerForm'
+            = t("survey.next") 

@@ -1,0 +1,1 @@
+resources :survey_answers

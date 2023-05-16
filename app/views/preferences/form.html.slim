@@ -1,0 +1,30 @@
+= controlled_form do
+  .navbar.navbar-expand-lg.navbar-light.bg-secondary
+    ul.navbar-nav
+        li.nav-item
+          = link_to t("navbar.return"), preferences_path, class: 'nav-link'
+    .navbar-brand = t("preference.create")
+
+  .card-body
+    .d-flex.justify-content-center.mt-5
+      = form_for @preference,
+        remote: true,
+        html: { id: 'preferencesForm' },
+        data: { action: 'ajax:error->form#onPostError ajax:success->form#onPostSuccess' } do |f|
+          = render 'shared/error_messages', object: @preference
+          .col-md-12
+            .wrapper
+              .row.no-gutters
+                .col-lg-8.col-md-7.order-md-last.d-flex.align-items-stretch
+                  .card.col.sm-6.p-3
+                    .mb-3
+                      h4 = t("preference.form.title")
+                    .mb-2
+                      .mb-2
+                        = f.text_field :description, class: 'form-control', placeholder: t("preference.form.description")
+                      .mb-2
+                        button.btn.btn-info.mx-1 type='submit' name='commit' value='approve' form='preferencesForm' 
+                          = t("preference.form.save")
+                .col-lg-4.col-md-5.d-flex.align-items-stretch
+                  = image_tag("micolet.png", class: "img-thumbnail", width: "320", height: "320")
+    

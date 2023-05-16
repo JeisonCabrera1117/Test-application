@@ -1,0 +1,55 @@
+en:
+  navbar:
+    index: ⇠ Index |
+    return: ⇠ Return
+  root:
+    preferences: View preferences
+    survey_quesions: View survey questions
+    user: New user
+    title: Micolet coding challenge
+    choose: ⇧ Choose an option from those that appear in the navbar ⇧
+  user:
+    title: View user
+    form:
+      email: email
+      name: Name
+      save: Save
+      back: Back
+      preference: Preferences
+  preference:
+    title: View preferences
+    create: Create preference
+    index:
+      new: New preference
+      index: Index
+    table:
+      number: Number
+      description: Description
+      delete: Delete
+      edit: Edit
+    form:
+      title: Preference
+      description: Description of reference
+      save: Save
+      back: Back
+  survey_question:
+    index:
+      new: new survey question
+      index: Index
+    form:
+      title: Create survey questions
+      subtitle: Survey questions
+      question: Question
+      save: Save
+      back: Back
+  validates:
+    user:
+      email_present: email must be present
+      email_use: the email is already in use, please try another
+      email_not_valid: The email is not valid, please try another
+  survey:
+    survey_answer: Answer
+    write_answer: write the answer
+    finish: Finish
+    next: Next
+    back: Back

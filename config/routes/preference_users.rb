@@ -1,0 +1,1 @@
+resources :preference_user

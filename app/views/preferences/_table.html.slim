@@ -1,0 +1,18 @@
+table.table.table-bordered
+  thead
+    th = t("preference.table.number")
+    th = t("preference.table.description")
+    th = t("preference.table.edit")
+    th = t("preference.table.delete")
+  tbody
+    - @preferences.each.with_index(1) do |preference, index |
+      tr
+        td = index
+        td = preference.description
+        td = link_to edit_preference_path(preference),
+            class: 'btn btn-sm btn-outline-success mr-1'
+              = t("preference.table.edit")
+              
+        td = link_to preference_path(preference), method: :delete,
+             class: 'btn btn-sm btn-outline-danger mr-1'
+              = t("preference.table.delete")

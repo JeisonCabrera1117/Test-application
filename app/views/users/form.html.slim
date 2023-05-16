@@ -1,0 +1,39 @@
+= controlled_form do
+  .navbar.navbar-expand-lg.navbar-light.bg-secondary
+    ul.navbar-nav
+        li.nav-item
+          = link_to t("navbar.index"), root_path, class: 'nav-link'
+    .navbar-brand = t("user.title")
+
+  .card-body
+    .d-flex.justify-content-center.mt-1
+      = image_tag("micolet_two.png", class: "img-thumbnail", width: "200", height: "150")
+    .d-flex.justify-content-center.mt-1
+      = form_for @user,
+        remote: true,
+        data: { action: 'ajax:error->form#onPostError ajax:success->form#onPostSuccess' },
+        html: { id: 'preferencesForm'} do |f|
+          = render 'shared/error_messages', object: @user
+          .d-flex.justify-content-center.mt-1
+            .justify-content-center.mt-1
+              h5 = 'Welcome! Soon we will launch our site in this country'
+          .d-flex.justify-content-center
+            .justify-content-center.mt-1
+              h5 = 'Suscribe to receive our newsletter'
+          .form-row.justify-content-center.mt-1
+            .col-lg-6
+              = f.label(:email, t("user.form.email")) 
+              = f.email_field :email, class: 'form-control', placeholder: t("user.form.email")
+          .form-row.justify-content-center.mt-2
+            .col-lg-6
+              = f.label(:name, t("user.form.name")) 
+              = f.text_field :name, class: 'form-control', placeholder: t("user.form.name")
+          .form-row.justify-content-center.mt-2
+            .col-lg-6
+              = f.label(:preferences, t("user.form.preference"))
+              = f.fields_for :preferences do |ff|
+                = render 'preference_fields', f: ff
+          .form-row.justify-content-center.mt-1
+            button.btn.btn-info.mx-1 type='submit' name='commit' value='approve' form='preferencesForm'
+              = 'Subscribe me!'
+
