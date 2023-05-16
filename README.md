@@ -10,5 +10,7 @@
 	2- rails s
 
 	Para un correcto funcionamiento de la aplicación, primero crear las preferencias y las preguntas de la encuesta, posteriormente ya se podrá crear un usuario dando click en "new user" el cual está como primer botón del navbar
+	
+El correo electrónico llegará una vez se registre un usuario, el usuario deberá ir a la encuesta por medio de un link que le llegará al correo
 # -Micolet-Coding-challenge-Jeison_Cabrera
 
