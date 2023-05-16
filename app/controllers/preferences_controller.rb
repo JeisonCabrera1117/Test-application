@@ -32,8 +32,7 @@ class PreferencesController < ApplicationController
   end
 
   def destroy
-    if @preference.destroy
-    end
+    @preference.destroy
     redirect_to preferences_path
   end
 

@@ -18,7 +18,7 @@ class SurveyMailer < ApplicationMailer
       <br />
       Queremos agradecerle por ser parte Micolet !
       <br />
-      Además, nos dirigimos a usted para notificarle al responder la siguiente encuesta puede obtener un cupon de descuento
+      Además, nos dirigimos a usted para notificarle que al responder la siguiente encuesta puede obtener un cupon de descuento
       <br />
       <br />
       <a href="#{url}" target="_blank">#{url}</a>
